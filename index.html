@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl"> 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunchbox studentki</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div class="logo">Lunchbox studentki</div>
+<nav class="nav">
+<ul>
+<li><a href="#home">Strona Główna</a></li>
+<li><a href="#features">Funkcje</a></li>
+<li><a href="#recipes">Przepisy</a></li>
+<li><a href="#fridge">Z lodówki</a></li>
+<li><a href="#contact">Kontakt</a></li>
+</ul>
+</nav>
+<div class="hamburger">&#9776;</div>
+</header>
+<section id="home" class="hero">
+<h1>Pomysły na szybkie, tanie i pyszne jedzenie</h1>
+<p>Stworzone z myślą o studentkach</p>
+<img src="https://images.unsplash.com/photo-1604908177590-b77f8a315929" alt="Makaron" class="hero-img">
+</section>
+<section id="features" class="features">
+<h2>Funkcje</h2>
+<ul>
+<li>Losowy wybór przepisu (np. „Dziś spróbuj: Makaron z pesto”)</li>
+<li>Filtry: szybkie, wegańskie, tanie, zdrowe</li>
+<li>Możliwość zapisania ulubionych przepisów</li>
+<li>Sekcja „Co można zrobić z tego, co masz w lodówce?”</li>
+</ul>
+</section>
+<section id="recipes" class="recipes">
+<h2>Przykładowy Przepis</h2>
+<div class="recipe-card">
+<img src="https://images.unsplash.com/photo-1525755662778-989d0524087e" alt="Pesto" />
+<div class="recipe-info">
+<h3>Makaron z Pesto</h3>
+<p>Szybki i pyszny makaron z zielonym pesto – idealny na studencką kolację!</p>
+</div>
+</div>
+</section>
+<section id="fridge" class="fridge">
+<h2>Co masz w lodówce?</h2>
+<p>Wpisz składniki, które masz, a my coś zaproponujemy:</p>
+<input type="text" id="ingredients" placeholder="Np. jajka, makaron, pomidor...">
+<button onclick="findRecipe()">Szukaj przepisu</button>
+<p id="suggestion" class="suggestion"></p>
+</section>
+<footer id="contact">
+<h2>Kontakt</h2>
+<p>Masz pytania? Napisz do nas: <a href="mailto:kontakt@whatsfordinner.pl">kontakt@whatsfordinner.pl</a></p>
+</footer>
+<script>
+ 
+        const hamburger = document.querySelector('.hamburger');
+ 
+        const nav = document.querySelector('.nav');
+ 
+        hamburger.addEventListener('click', () => {
+ 
+            nav.classList.toggle('active');
+ 
+        });
+ 
+        function findRecipe() {
+ 
+            const input = document.getElementById("ingredients").value.toLowerCase();
+ 
+            const suggestion = document.getElementById("suggestion");
+ 
+            const recipes = [
+ 
+                "Omlet z warzywami",
+ 
+                "Makaron z pesto",
+ 
+                "Sałatka z jajkiem i tuńczykiem",
+ 
+                "Tosty z serem i pomidorem",
+ 
+                "Zupa krem z dyni (jeśli masz!)"
+ 
+            ];
+ 
+            const random = recipes[Math.floor(Math.random() * recipes.length)];
+ 
+            if (input.length > 3) {
+ 
+                suggestion.innerText = `Możesz spróbować: ${random}`;
+ 
+            } else {
+ 
+                suggestion.innerText = "Wpisz coś więcej, żebym mogła pomóc!";
+ 
+            }
+ 
+        }
+</script>
+</body>
+</html>
