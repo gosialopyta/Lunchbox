@@ -6,7 +6,10 @@
 
 - Zespół: Małgorzata Łopyta, Malwina Kasior, Amelia Januchowska
 - Podział zadań:
+- 
   Sekcja nawigacja - Amelia J.
+  
   Sekcja z przepisami - Malwina K.
+  
   Sekcja kontakt - Małgosia Ł.
 
